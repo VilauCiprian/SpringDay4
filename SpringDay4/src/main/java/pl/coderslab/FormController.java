@@ -3,16 +3,19 @@ package pl.coderslab;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Controller
+@RequestMapping("/first")
 public class FormController {
+
     @GetMapping("/form")
     public String getForm(){
-      return "form.jsp";
+      return "form";
     }
     @PostMapping("/form")
     public String postForm(@RequestParam("paramName") String name, @RequestParam String paramDate){
@@ -20,6 +23,6 @@ public class FormController {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate date =LocalDate.parse(paramDate, format);
         System.out.println(date);
-        return "form.jsp";
+        return "form";
     }
 }

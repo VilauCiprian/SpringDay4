@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/form" method="post">
+    <form action="/first/form" method="post">
         <input type="text" name="paramDate">
         <input type="text" name="paramName">
         <input type="submit">
