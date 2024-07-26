@@ -29,10 +29,9 @@ public class RandomController {
     @ResponseBody
     public String ex2Parameters (@PathVariable int max, @PathVariable int min) {
         Random random = new Random();
-        int randomInt = random.nextInt(max);
-        if(randomInt <= min){
-            randomInt = randomInt + max - min;
-        }
+
+        int randomInt = random.nextInt(max-min+1)+min;
+
         return "User entered the values min =  " + min + ", " + max + ". The following number was drawn: . " + randomInt;
     }
 }
