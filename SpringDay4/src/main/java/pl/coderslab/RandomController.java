@@ -24,4 +24,15 @@ public class RandomController {
         int randomInt = random.nextInt(max);
         return "User entered the value " + max + ". The following number was drawn: . " + randomInt;
     }
+
+    @GetMapping("/random/{max}/{min}")
+    @ResponseBody
+    public String ex2Parameters (@PathVariable int max, @PathVariable int min) {
+        Random random = new Random();
+        int randomInt = random.nextInt(max);
+        if(randomInt <= min){
+            randomInt = randomInt + max - min;
+        }
+        return "User entered the values min =  " + min + ", " + max + ". The following number was drawn: . " + randomInt;
+    }
 }
