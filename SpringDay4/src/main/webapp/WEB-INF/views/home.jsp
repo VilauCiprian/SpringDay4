@@ -9,6 +9,12 @@
 <html>
 <head>
     <title>Home</title>
+    <style>
+        body {
+            color: ${color};
+            background-color: ${backgroundColor};
+        }
+    </style>
 </head>
 <body>
 <p>
